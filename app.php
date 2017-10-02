@@ -1,7 +1,5 @@
 <?php
-spl_autoload_register(function ($class) {
-    include 'Classes/' . $class . '.php';
-});
+namespace App;
 
 function stringUnderline($inputString, $simbol = '='){
     $outString = $simbol;
@@ -15,8 +13,15 @@ $welcomeText = 'Welcome to SimUDuck training up!';
 printf("%s\n", $welcomeText);
 stringUnderline($welcomeText);
 
-$duck1 = new MallardDuck();
 
-$duck1->quack();
+require_once 'Classes/Duck.php';
+require_once 'Classes/MallardDuck.php';
+require_once 'Classes/RedheadDuck.php';
+
+$duck1 = new Classes\MallardDuck();
+$duck2 = new Classes\RedheadDuck();
+
+$duck1->display();
+$duck2->display();
 
 

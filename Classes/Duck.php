@@ -1,24 +1,17 @@
 <?php
-
 namespace App\Classes;
-/**
- * Created by PhpStorm.
- * User: nkl
- * Date: 02.10.17
- * Time: 10:51
- */
 
 abstract class Duck
 {
     abstract protected function display();
 
-    protected function quack()
+    public function quack()
     {
-        printf('%s\nКря!');
+        printf("\nКря!\n");
     }
 
-    protected function swim()
+    public function swim()
     {
-        printf('%s\nПлыву...');
+        printf('\nПлыву...');
     }
 }
