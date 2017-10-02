@@ -17,11 +17,17 @@ stringUnderline($welcomeText);
 require_once 'Classes/Duck.php';
 require_once 'Classes/MallardDuck.php';
 require_once 'Classes/RedheadDuck.php';
+require_once 'Interfaces/Flyable.php';
+require_once 'Classes/DecoyDuck.php';
+
 
 $duck1 = new Classes\MallardDuck();
 $duck2 = new Classes\RedheadDuck();
+$duck3 = new Classes\DecoyDuck();
 
 $duck1->display();
 $duck2->display();
+$duck3->fly();
 
+//Еееее!!!! Я наконец понял в чем разница между интерфейсом и абстрактным классом!!!
 
