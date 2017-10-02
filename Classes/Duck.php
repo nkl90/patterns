@@ -8,7 +8,7 @@ namespace App\Classes;
  * Time: 10:51
  */
 
-class Duck
+abstract class Duck
 {
     abstract protected function display();
 

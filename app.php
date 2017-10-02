@@ -1,39 +1,22 @@
 <?php
+spl_autoload_register(function ($class) {
+    include 'Classes/' . $class . '.php';
+});
 
-class A
-{
-    function foo()
-    {
-        if(isset($this)){
-            printf("\n%s%s%s\n", '$this определена (', get_class($this), ')' );
-        }else{
-            printf("\n%s\n", '$this не определена.' );
-        }
+function stringUnderline($inputString, $simbol = '='){
+    $outString = $simbol;
+    for($i = 1; $i < mb_strlen($inputString); $i++){
+        $outString = $outString . $simbol;
     }
+    printf("%s\n", $outString);
 }
+$welcomeText = 'Welcome to SimUDuck training up!';
 
-class B
-{
-    function bar()
-    {
-        A::foo();
-    }
-}
+printf("%s\n", $welcomeText);
+stringUnderline($welcomeText);
 
-$a = new A();
-$b = new B();
+$duck1 = new MallardDuck();
 
-$a->foo();
-A::foo();
-$b->bar();
-B::bar();
-$className = 'A';
-$instance = new $className();
-$instance->foo();
-
-//В php объекты передаются по ссылке! Запомни!
-
-$b = $a;
-printf("\n%s%s\n",'В $b теперь хранится объект $a get_class($b) = ', get_class($b));
+$duck1->quack();
 
 
