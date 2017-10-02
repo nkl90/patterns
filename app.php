@@ -1,21 +1,39 @@
 <?php
-/*namespace App;
 
-function stringUnderline($inputString, $simbol = '='){
-    $outString = $simbol;
-    for($i = 1; $i < mb_strlen($inputString); $i++){
-        $outString = $outString . $simbol;
+class A
+{
+    function foo()
+    {
+        if(isset($this)){
+            printf("\n%s%s%s\n", '$this определена (', get_class($this), ')' );
+        }else{
+            printf("\n%s\n", '$this не определена.' );
+        }
     }
-    printf("%s\n", $outString);
 }
-$welcomeText = 'Welcome to SimUDuck training up!';
 
-printf("%s\n", $welcomeText);
-stringUnderline($welcomeText);
+class B
+{
+    function bar()
+    {
+        A::foo();
+    }
+}
 
-require_once __DIR__ . '/Classes/Duck.php';
-$duck1 = new Duck();
+$a = new A();
+$b = new B();
 
-$duck1->quack();*/
+$a->foo();
+A::foo();
+$b->bar();
+B::bar();
+$className = 'A';
+$instance = new $className();
+$instance->foo();
+
+//В php объекты передаются по ссылке! Запомни!
+
+$b = $a;
+printf("\n%s%s\n",'В $b теперь хранится объект $a get_class($b) = ', get_class($b));
 
 
