@@ -13,12 +13,11 @@ $welcomeText = 'Welcome to SimUDuck training up!';
 printf("%s\n", $welcomeText);
 stringUnderline($welcomeText);
 
-
+require_once 'Traits/FlyMixin.php';
+require_once 'Interfaces/FlyBehavior.php';
 require_once 'Classes/Duck.php';
 require_once 'Classes/MallardDuck.php';
 require_once 'Classes/RedheadDuck.php';
-require_once 'Traits/FlyMixin.php';
-require_once 'Interfaces/FlyBehavior.php';
 require_once 'Classes/DecoyDuck.php';
 
 
@@ -29,6 +28,7 @@ $duck3 = new Classes\DecoyDuck();
 $duck1->display();
 $duck2->display();
 $duck3->fly();
+$duck1->fly();
 
 //Еееее!!!! Я наконец понял в чем разница между интерфейсом и абстрактным классом!!!
 

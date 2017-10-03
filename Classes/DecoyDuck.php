@@ -13,11 +13,14 @@ use App\Traits\FlyMixin;
  */
 class DecoyDuck extends Duck implements FlyBehavior
 {
-    use FlyMixin;
-
     public function display()
     {
         echo "\n" . __CLASS__ . "\n";
+    }
+
+    public function fly()
+    {
+        echo "\n" . 'Это собственная реализация метода fly для класса уток DecoyDuck' . "\n";
     }
 
 }
