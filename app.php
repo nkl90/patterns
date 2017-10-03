@@ -17,7 +17,8 @@ stringUnderline($welcomeText);
 require_once 'Classes/Duck.php';
 require_once 'Classes/MallardDuck.php';
 require_once 'Classes/RedheadDuck.php';
-require_once 'Interfaces/Flyable.php';
+require_once 'Traits/FlyMixin.php';
+require_once 'Interfaces/FlyBehavior.php';
 require_once 'Classes/DecoyDuck.php';
 
 

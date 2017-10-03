@@ -3,18 +3,21 @@
  * Эта утка может летать!!!
  */
 namespace App\Classes;
+use App\Interfaces\FlyBehavior;
+use App\Traits\FlyMixin;
 
-use App\Interfaces\Flyable;
-
-class DecoyDuck extends Duck implements Flyable
+/*
+ * Итак! Мы реализовали интерфейс с помощью трейта!
+ * Незнаю, множественное ли это наследование и зачем тогда вообще
+ * интерфейс... Но это круто и я понял как это делается на php...
+ */
+class DecoyDuck extends Duck implements FlyBehavior
 {
+    use FlyMixin;
+
     public function display()
     {
         echo "\n" . __CLASS__ . "\n";
     }
 
-    public function fly()
-    {
-        echo "\n" . 'Этот метод обязан быть реализован!!' . "\n";
-    }
 }
